@@ -51,12 +51,24 @@ export function LearningGoals({ className }: LearningGoalsProps) {
                     ...g,
                     targetDate: new Date(g.targetDate),
                     createdAt: new Date(g.createdAt)
-ones, setMilestones] = useState<string[]> (['']);
+                }));
+            }
+        }
+        return [];
+    });
 
-                    const [filterCategory, setFilterCategory] = useState<'all' | Goal['category']>('all');
-                    const [filterStatus, setFilterStatus] = useState<'all' | 'active' | 'completed'>('all');
+    const [isCreating, setIsCreating] = useState(false);
+    const [editingGoal, setEditingGoal] = useState<string | null>(null);
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+    const [targetDate, setTargetDate] = useState('');
+    const [category, setCategory] = useState<Goal['category']>('course');
+    const [priority, setPriority] = useState<Goal['priority']>('medium');
+    const [milestones, setMilestones] = useState<string[]>(['']);
+    const [filterCategory, setFilterCategory] = useState<'all' | Goal['category']>('all');
+    const [filterStatus, setFilterStatus] = useState<'all' | 'active' | 'completed'>('all');
 
-                    useEffect(() => {
+    useEffect(() => {
         if (typeof window !== 'undefined') {
             localStorage.setItem('learning-goals', JSON.stringify(goals));
         }

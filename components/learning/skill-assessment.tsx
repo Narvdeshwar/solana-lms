@@ -22,133 +22,154 @@ interface AssessmentQuestion {
     question: string;
     options: string[];
     correctAnswer: number;
-    difficulty: 'beginner' | 'intermediate' | 'adv
-form with high throughput',
-'Privacy-focused cryptocurrency',
-    'Decentralized storage network',
-    'Layer 2 scaling solution'
+    difficulty: 'beginner' | 'intermediate' | 'advanced';
+    topic: string;
+}
+
+interface SkillLevel {
+    level: 'beginner' | 'intermediate' | 'advanced' | 'expert';
+    score: number;
+    strengths: string[];
+    weaknesses: string[];
+    recommendedCourses: string[];
+}
+
+interface SkillAssessmentProps {
+    onComplete?: (result: SkillLevel) => void;
+    className?: string;
+}
+
+const assessmentQuestions: AssessmentQuestion[] = [
+    {
+        id: '1',
+        question: 'What is Solana?',
+        options: [
+            'A high-performance blockchain platform with high throughput',
+            'Privacy-focused cryptocurrency',
+            'Decentralized storage network',
+            'Layer 2 scaling solution'
         ],
-correctAnswer: 0,
-    difficulty: 'beginner',
+        correctAnswer: 0,
+        difficulty: 'beginner',
         topic: 'basics'
     },
-{
-    id: '2',
+    {
+        id: '2',
         question: 'What is Proof of History (PoH)?',
-            options: [
-                'A consensus mechanism',
-                'A cryptographic clock for ordering events',
-                'A type of smart contract',
-                'A wallet protocol'
-            ],
-                correctAnswer: 1,
-                    difficulty: 'beginner',
-                        topic: 'consensus'
-},
-{
-    id: '3',
+        options: [
+            'A consensus mechanism',
+            'A cryptographic clock for ordering events',
+            'A type of smart contract',
+            'A wallet protocol'
+        ],
+        correctAnswer: 1,
+        difficulty: 'beginner',
+        topic: 'consensus'
+    },
+    {
+        id: '3',
         question: 'What programming language is primarily used for Solana smart contracts?',
-            options: [
-                'Solidity',
-                'JavaScript',
-                'Rust',
-                'Python'
-            ],
-                correctAnswer: 2,
-                    difficulty: 'beginner',
-                        topic: 'development'
-},
-{
-    id: '4',
+        options: [
+            'Solidity',
+            'JavaScript',
+            'Rust',
+            'Python'
+        ],
+        correctAnswer: 2,
+        difficulty: 'beginner',
+        topic: 'development'
+    },
+    {
+        id: '4',
         question: 'What is an Account in Solana?',
-            options: [
-                'A user wallet address',
-                'A data storage unit that can hold SOL or program data',
-                'A smart contract function',
-                'A transaction type'
-            ],
-                correctAnswer: 1,
-                    difficulty: 'intermediate',
-                        topic: 'architecture'
-},
-{
-    id: '5',
+        options: [
+            'A user wallet address',
+            'A data storage unit that can hold SOL or program data',
+            'A smart contract function',
+            'A transaction type'
+        ],
+        correctAnswer: 1,
+        difficulty: 'intermediate',
+        topic: 'architecture'
+    },
+    {
+        id: '5',
         question: 'What is a Program Derived Address (PDA)?',
-            options: [
-                'A user-generated wallet address',
-                'An address derived from a program ID and seeds',
-                'A temporary transaction address',
-                'An encrypted account address'
-            ],
-                correctAnswer: 1,
-                    difficulty: 'intermediate',
-                        topic: 'development'
-},
-{
-    id: '6',
+        options: [
+            'A user-generated wallet address',
+            'An address derived from a program ID and seeds',
+            'A temporary transaction address',
+            'An encrypted account address'
+        ],
+        correctAnswer: 1,
+        difficulty: 'intermediate',
+        topic: 'development'
+    },
+    {
+        id: '6',
         question: 'What is the purpose of the Anchor framework?',
-            options: [
-                'To mine SOL tokens',
-                'To simplify Solana program development',
-                'To create NFTs',
-                'To manage validator nodes'
-            ],
-                correctAnswer: 1,
-                    difficulty: 'intermediate',
-                        topic: 'development'
-},
-{
-    id: '7',
+        options: [
+            'To mine SOL tokens',
+            'To simplify Solana program development',
+            'To create NFTs',
+            'To manage validator nodes'
+        ],
+        correctAnswer: 1,
+        difficulty: 'intermediate',
+        topic: 'development'
+    },
+    {
+        id: '7',
         question: 'How does Solana achieve parallel transaction processing?',
-            options: [
-                'Using sharding',
-                'Through Sealevel runtime that processes non-overlapping transactions in parallel',
-                'By increasing block size',
-                'Using multiple consensus mechanisms'
-            ],
-                correctAnswer: 1,
-                    difficulty: 'advanced',
-                        topic: 'architecture'
-},
-{
-    id: '8',
+        options: [
+            'Using sharding',
+            'Through Sealevel runtime that processes non-overlapping transactions in parallel',
+            'By increasing block size',
+            'Using multiple consensus mechanisms'
+        ],
+        correctAnswer: 1,
+        difficulty: 'advanced',
+        topic: 'architecture'
+    },
+    {
+        id: '8',
         question: 'What is the role of the Turbine protocol in Solana?',
-            options: [
-                'Transaction validation',
-                'Block propagation optimization',
-                'Consensus mechanism',
-                'Smart contract execution'
-            ],
-                correctAnswer: 1,
-                    difficulty: 'advanced',
-                        topic: 'architecture'
-},
-{
-    id: '9',
+        options: [
+            'Transaction validation',
+            'Block propagation optimization',
+            'Consensus mechanism',
+            'Smart contract execution'
+        ],
+        correctAnswer: 1,
+        difficulty: 'advanced',
+        topic: 'architecture'
+    },
+    {
+        id: '9',
         question: 'What is Cross-Program Invocation (CPI)?',
-            options: [
-                'Calling one program from another program',
-                'Transferring SOL between accounts',
-                'Creating new accounts',
-                'Validating transactions'
-            ],
-                correctAnswer: 0,
-                    difficulty: 'advanced',
-                        topic: 'development'
-},
-{
-    id: '10',
+        options: [
+            'Calling one program from another program',
+            'Transferring SOL between accounts',
+            'Creating new accounts',
+            'Validating transactions'
+        ],
+        correctAnswer: 0,
+        difficulty: 'advanced',
+        topic: 'development'
+    },
+    {
+        id: '10',
         question: 'What is the purpose of rent in Solana?',
-            options: [
-                'Transaction fees',
-                'Validator rewards',
-                'Storage cost for keeping accounts alive',
-                'Staking rewards'
-            ],
-                correctAnswer: 2,
-                    difficulty: 'intermediate',
-                        topic: 'economics'
-}
+        options: [
+            'Transaction fees',
+            'Validator rewards',
+            'Storage cost for keeping accounts alive',
+            'Staking rewards'
+        ],
+        correctAnswer: 2,
+        difficulty: 'intermediate',
+        topic: 'economics'
+    }
 ];
 
 export function SkillAssessment({ onComplete, className }: SkillAssessmentProps) {
