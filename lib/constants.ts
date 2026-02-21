@@ -99,6 +99,7 @@ export const ROUTES = {
     INSTRUCTOR: '/instructor',
     PEER_LEARNING: '/peer-learning',
     GAMIFICATION: '/gamification',
+    CERTIFICATES: '/certificates',
     SETTINGS: '/settings',
     WISHLIST: '/wishlist',
     CERTIFICATE: (id: string) => `/certificates/${id}`,
