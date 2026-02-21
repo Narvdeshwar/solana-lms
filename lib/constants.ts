@@ -96,6 +96,7 @@ export const ROUTES = {
     FORUM_THREAD: (courseId: string, threadId: string) => `/forums/${courseId}/${threadId}`,
     GROUPS: '/groups',
     GROUP_DETAIL: (groupId: string) => `/groups/${groupId}`,
+    INSTRUCTOR: '/instructor',
     SETTINGS: '/settings',
     WISHLIST: '/wishlist',
     CERTIFICATE: (id: string) => `/certificates/${id}`,
