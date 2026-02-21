@@ -98,6 +98,7 @@ export const ROUTES = {
     GROUP_DETAIL: (groupId: string) => `/groups/${groupId}`,
     INSTRUCTOR: '/instructor',
     PEER_LEARNING: '/peer-learning',
+    GAMIFICATION: '/gamification',
     SETTINGS: '/settings',
     WISHLIST: '/wishlist',
     CERTIFICATE: (id: string) => `/certificates/${id}`,
